@@ -6,6 +6,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.List;
 
@@ -30,7 +31,7 @@ public class DemoController {
         }
 
     @RequestMapping("/orders/{orderId}")
-    public ResponseEntity<Order> getOrderById(int orderId) {
+    public ResponseEntity<Order> getOrderById(@PathVariable int orderId) {
         splunkService.sendLog("SplunkDemoController called getOrderById method called {}");
         return ResponseEntity.ok(orderService.getOrderById(orderId));
     }
