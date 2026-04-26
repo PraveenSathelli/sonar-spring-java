@@ -25,7 +25,9 @@ pipeline {
                         -Dsonar.login=$SONAR_TOKEN \
                         -Dsonar.projectName=Petclinic \
                         -Dsonar.java.binaries=. \
-                        -Dsonar.projectKey=Petclinic
+                        -Dsonar.projectKey=Petclinic \
+                        -Dmaven.repo.local=/var/jenkins_home/.m2/repository \
+                        -Dsonar.userHome=/var/jenkins_home/.sonar
                     '''
                }
             }
