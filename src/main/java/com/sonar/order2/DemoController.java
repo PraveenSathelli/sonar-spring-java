@@ -29,10 +29,10 @@ public class DemoController {
             return ResponseEntity.ok(orderService.getAllOrders());
         }
 
-    @RequestMapping("/orders/{id}")
-    public ResponseEntity<Order> getOrderById(int id) {
+    @RequestMapping("/orders/{orderId}")
+    public ResponseEntity<Order> getOrderById(int orderId) {
         splunkService.sendLog("SplunkDemoController called getOrderById method called {}");
-        return ResponseEntity.ok(orderService.getOrderById(id));
+        return ResponseEntity.ok(orderService.getOrderById(orderId));
     }
 
     @RequestMapping( path = "/orders/add" , method = RequestMethod.POST)
